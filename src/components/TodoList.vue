@@ -1,12 +1,7 @@
 <template>
   <div>
-    <h1>TODO List</h1>
-    <div class="input-form">
-        <input type="Enter Todo">
-        <button>Submit</button>
-    </div>
     <div v-bind:key="todo.id" v-for="todo in todos">
-        <todo-item v-bind:todo="todo"/>
+        <todo-item v-bind:todo="todo" v-on:delete-todo="$emit('delete-todo', todo.id)"/>
     </div>
   </div>
 </template>

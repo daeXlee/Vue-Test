@@ -6,12 +6,13 @@
             @click="markCompleted"
             >{{todo.title}}
         </button>
+        <button class="delete" @click="$emit('delete-todo', todo.id)">x</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: "TodoItem",
+    name: 'TodoItem',
     props: ["todo"],
     methods: {
         markCompleted() {
@@ -30,8 +31,15 @@ export default {
         border-left: 5px solid green;
         line-height: 200%;
         margin-bottom: 10px;
-        width: 100%;
+        width: 80%;
         padding: 10px;
         font-size: 15px;
+    }
+    .delete {
+        border-radius: 50%;
+        color: white;
+        background-color: red;
+        margin-left: 5px;
+        font-size: 20px;
     }
 </style>
